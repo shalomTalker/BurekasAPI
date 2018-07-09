@@ -1,0 +1,86 @@
+get All:
+GET req:
+  /burekas
+  in application/json or text/html
+res:
+  httpCode(ok 200/bad request 400)
+  [
+    {
+    id:{id},
+    type:{"egg/mushrooms/potato/bulgarian_cheese"},//....hmmm...cheese burekas
+    weight(Kg):{integer},
+    Kcal:{integer}//1,563,687,789Kcal
+    },
+  ...]
+
+////
+get one:
+  GET req:
+  /burekas/{id}
+  in application/json or text/html
+res:
+  httpCode(ok 200/bad request 400)
+  {
+  id:{id},
+  type:{"egg/mushrooms/potato/bulgarian_cheese"},//....hmmm...cheese burekas
+  weight(Kg):{integer},
+  Kcal:{integer}//1,563,687,789Kcal
+  }
+
+////
+create one:
+POST req:
+
+  text/html
+  /burekas?type={"egg/mushrooms/potato/bulgarian_cheese"}&weight={integer}&Kcal={integer}
+
+or:
+  application/json
+  /burekas
+  {
+  type={"egg/mushrooms/potato/bulgarian_cheese"},
+  weight={integer},
+  Kcal={integer
+  }
+res:
+  httpCode(ok 201/bad request 400)
+
+////
+update entry:
+PUT req:
+
+  text/html
+  /burekas/{id}?type={"egg/mushrooms/potato/bulgarian_cheese"}&weight={integer}&Kcal={integer}
+
+or:
+
+  application/json
+  /burekas/{id}
+  {
+  type={"egg/mushrooms/potato/bulgarian_cheese"},
+  weight={integer},
+  Kcal={integer
+  }
+
+res:
+httpCode(no content 204/bad request 400)
+
+
+delete entry:
+DELETE req:
+  /burekas/{id}
+res:
+  httpCode(no content 204/bad request 400)
+
+
+item exists query:
+HEAD req:
+  /burekas/{id}
+
+res:
+  {true/false}
+  httpCode(no content 204/bad request 400)
+
+
+
+

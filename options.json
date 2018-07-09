@@ -1,0 +1,43 @@
+[{
+        "get all entries": {
+            "method": "GET",
+            "req": "GET /burekas\n//in application/json or text/html",
+            "res": "httpCode(200)\n[\n{\nid:{id},\ntype:{\"egg/mushrooms/potato/bulgarian_cheese\"},//....hmmm...cheese burekas\nweight(Kg):{integer},\nKcal:{integer}//1,563,687,789Kcal\n      },\n    ...]"
+        }
+    },
+    {
+        "get one entry": {
+            "method": "GET",
+            "req": "/burekas/{id}\n//in application/json or text/html",
+            "res": "  httpCode(200)\n{\nid:{id},\ntype:{\"egg/mushrooms/potato/bulgarian_cheese\"},//....hmmm...cheese burekas\nweight(Kg):{integer},\nKcal:{integer}//1,563,687,789Kcal\n}"
+        }
+    },
+    {
+        "create entry": {
+            "method": "POST",
+            "req": "text/html\n/burekas?type={\"egg/mushrooms/potato/bulgarian_cheese\"}&weight={integer}&Kcal={integer}\nor:\napplication/json\n/burekas\n{\ntype={\"egg/mushrooms/potato/bulgarian_cheese\"},\nweight={integer},\nKcal={integer\n}",
+            "res": "httpCode(201)"
+        }
+    },
+    {
+        "update entry": {
+            "method": "PUT",
+            "req": "text/html\n/burekas{id}?type={\"egg/mushrooms/potato/bulgarian_cheese\"}&weight={integer}&Kcal={integer}\nor:\napplication/json\n/burekas{id}\n{\ntype={\"egg/mushrooms/potato/bulgarian_cheese\"},\nweight={integer},\nKcal={integer\n}",
+            "res": "httpCode(204)"
+        }
+    },
+    {
+        "delete entry": {
+            "method": "DELETE",
+            "req": "/burekas/{id}",
+            "res": "httpCode(204)"
+        }
+    },
+    {
+        "check if entry exists": {
+            "method": "HEAD",
+            "req": "/burekas/{id}",
+            "res": "{true/false}"
+        }
+    }
+]
